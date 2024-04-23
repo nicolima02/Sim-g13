@@ -29,10 +29,10 @@ class GenerarAleatorios:
     def normal(media, desviacion, muestra):
         serie_out = []
         for i in range(muestra):
-            if (muestra == 0):
-                muestra = 0.000001
             rnd1 = GenerarAleatorios.generar_random() #genera un numero random entre 0 y 1
             rnd2 = GenerarAleatorios.generar_random() #genera un numero random entre 0 y 1
+            if rnd1 == 0: rnd1 = 0.0000001
+            if rnd2 == 0: rnd1 = 0.0000001
             numero1 = (math.sqrt(-2*(math.log(rnd1)))*math.cos(2*math.pi*rnd2))*desviacion + media #genera el numero aleatorio
             serie_out.append(numero1)
             numero2 = (math.sqrt(-2*(math.log(rnd1)))*math.sin(2*math.pi*rnd2))*desviacion + media
